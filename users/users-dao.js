@@ -25,7 +25,10 @@ export const findUserByCredentials = (username, password) => {
 };
 
 
-export const createUser = (user) => users.push(user);
+export const createUser = (user) => {
+  users.push(user)
+  return user
+ };
 
 
 export const updateUser = (uid, user) => {

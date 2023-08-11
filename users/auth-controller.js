@@ -40,13 +40,13 @@ const AuthController = (app) => {
   };
  
  const update   = (req, res) => { 
-  // const currentUser = req.session["currentUser"];
-  // if (!currentUser) {
-  //   res.sendStatus(404);
-  //   return;
-  // }
-  // usersDao.updateUser(req.body._id, req.body);
-  // res.sendStatus(200);
+  const currentUser = req.session["currentUser"];
+  if (!currentUser) {
+    res.sendStatus(404);
+    return;
+  }
+  usersDao.updateUser(req.body._id, req.body);
+  res.sendStatus(200);
  };   //Implement This
 
 
